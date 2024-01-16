@@ -1,0 +1,28 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven{
+            url = ARTIFACTS_FEED_URL
+            name = ARTIFACTS_FEED_NAME
+            credentials {
+                username USERNAME
+                password ACCESSTOKEN
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+}
+
+rootProject.name = "DocumentoscopySampleAndroidJava"
+include ':app'
